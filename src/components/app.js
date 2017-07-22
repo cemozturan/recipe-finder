@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchRecipes from './search-recipes';
 import RecipeList from './recipe-list';
+import FavoriteRecipeList from './favorite-recipe-list';
 import '../styles/index.css';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
         <h2>Recipe Finder</h2>
         <SearchRecipes />
         <RecipeList />
+        <FavoriteRecipeList />
       </div>
     );
   }

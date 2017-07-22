@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RecipeItem from './recipe-item';
 
-class RecipeList extends Component {
+class FavoriteRecipeList extends Component {
     render() {
-        return(
+        return (
             <div>
+                <h4>Favorite Recipes:</h4>
             {
-                this.props.recipes.map((item, index) => {
+                this.props.favoriteRecipes.map((item, index) => {
                         return (
                                 <RecipeItem
                                     key={index}
                                     recipe={item}
-                                    favoriteButton={true}/>
+                                    favoriteButton={false}/>
                         )
                     }
                 )
@@ -23,7 +24,9 @@ class RecipeList extends Component {
 }
 
 function mapStateToProps(state) {
-    return state;
+    return {
+        favoriteRecipes: state.favoriteRecipes
+    };
 }
 
-export default connect(mapStateToProps, null)(RecipeList);
+export default connect(mapStateToProps, null)(FavoriteRecipeList);
